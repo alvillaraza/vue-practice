@@ -10,10 +10,20 @@
     <title>Random User Generator</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!-- "v-bind:" can be used or it can just be ":" -->
+      <img
+        :class="gender"
+        v-bind:src="picture"
+        :alt="`${firstName} ${lastName}`"
+      />
+      <h1>{{firstName}} {{lastName}}</h1>
+      <h3>Email: {{email}}</h3>
+      <button v-on:click="getUser()" :class="gender">Get Random User</button>
+    </div>
 
     <script src="https://unpkg.com/vue@3.0.5"></script>
     <script src="app.js"></script>
